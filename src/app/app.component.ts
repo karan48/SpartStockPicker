@@ -16,11 +16,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.websocketService.listen('privateMessage').subscribe((data) => {
+    this.websocketService.listen('message').subscribe((data) => {
       console.log('Message from server:', data);
     });
 
     // Example of emitting a message
-    this.websocketService.emit('privateMessage', 'Hello from Angular');
+    this.websocketService.emit('message', 'Hello from Angular');
   }
 }
